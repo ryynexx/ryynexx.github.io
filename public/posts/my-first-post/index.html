@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Posts | ryynexx</title>
+<title>My First Post | ryynexx</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - ryynexx">
+<meta name="description" content="my first post">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/">
+<link rel="canonical" href="http://localhost:1313/posts/my-first-post/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/my-first-post/">
 <noscript>
     <style>
         #theme-toggle,
@@ -31,7 +30,7 @@
 </noscript>
 </head>
 
-<body class="list dark" id="top">
+<body class=" dark" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "light") {
         document.body.classList.remove('dark')
@@ -74,7 +73,7 @@
             </li>
             <li>
                 <a href="http://localhost:1313/posts/" title="Posts">
-                    <span class="active">Posts</span>
+                    <span>Posts</span>
                 </a>
             </li>
             <li>
@@ -85,38 +84,28 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a></div>
-  <h1>
-    Posts
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Hack Your Productivity with Git &amp; GitHub: A Must-Read Guide
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Introduction In the world of coding, keeping track of changes, collaborating with fellow developers, and ensuring that you never lose progress is crucial. That’s where Git and GitHub come in! Whether you’re a beginner or an experienced coder, mastering these tools can streamline your workflow and make software development a breeze.
-In this blog, we’ll dive deep into what Git and GitHub are, why they’re important, and how to get started. Let’s explore the power of version control!
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-10 09:43:45 +0500 PKT'>March 10, 2025</span>&nbsp;·&nbsp;3 min</footer>
-  <a class="entry-link" aria-label="post link to Hack Your Productivity with Git & GitHub: A Must-Read Guide" href="http://localhost:1313/posts/git_github/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      My First Post
+    </h1>
+    <div class="post-meta"><span title='2025-03-10 09:43:45 +0500 PKT'>March 10, 2025</span>&nbsp;·&nbsp;1 min
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">My First Post
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>my first post
-</p>
+</div>
+  </header> 
+
+  <div class="post-content"><p>my first post</p>
+
+
   </div>
-  <footer class="entry-footer"><span title='2025-03-10 09:43:45 +0500 PKT'>March 10, 2025</span>&nbsp;·&nbsp;1 min</footer>
-  <a class="entry-link" aria-label="post link to My First Post" href="http://localhost:1313/posts/my-first-post/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
 </article>
     </main>
     
@@ -188,6 +177,53 @@ In this blog, we’ll dive deep into what Git and GitHub are, why they’re impo
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 
