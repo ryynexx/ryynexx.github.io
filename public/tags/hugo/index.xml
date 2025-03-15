@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hugo on ryynexx</title>
+    <link>http://localhost:1313/tags/hugo/</link>
+    <description>Recent content in Hugo on ryynexx</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Mar 2025 09:30:09 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create, Customize, and Deploy – Your Hugo Website in No Time!</title>
+      <link>http://localhost:1313/posts/hugo_site/</link>
+      <pubDate>Sat, 15 Mar 2025 09:30:09 +0500</pubDate>
+      <guid>http://localhost:1313/posts/hugo_site/</guid>
+      <description>&lt;p&gt;Tired of the traditional content management system (CMS)? Hugo is your way out to an easier, faster, more flexible, and powerful static site generator (SSG) available today. Hugo is known for its unparalleled speed. Whether you&amp;rsquo;re a developer, blogger, or entrepreneur, Hugo empowers you to create and manage high-performance websites effortlessly. In this blog, you&amp;rsquo;ll get to know Hugo&amp;rsquo;s key features, how to get started with your website on Hugo, and its deployment to GitHub.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

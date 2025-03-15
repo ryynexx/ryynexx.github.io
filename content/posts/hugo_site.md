@@ -1,5 +1,5 @@
 +++
-date = '2025-03-15T09:30:9+05:00'
+date = '2025-03-15T09:30:09+05:00'
 title = 'Create, Customize, and Deploy – Your Hugo Website in No Time!'
 tags =['hugo','ssg','GitHubPages','FastWebsite']
 +++
