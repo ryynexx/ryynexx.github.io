@@ -24,15 +24,18 @@ Starting with Hugo is straightforward and quick. Follow these steps:
 ### 1- Install Hugo
 
 - **On Linux**
+
 ```bash
 sudo snap install hugo
 ```
 
 - **On macOS**
+
 ```bash
 brew install hugo
 ```
 - **On Windows**
+
 Download the Windows binary from [Hugo's official releases](https://github.com/gohugoio/hugo/releases).
 
 ### 2- Create a New Site
@@ -52,6 +55,7 @@ git init
 git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/hugo-PaperMod
 ```
 Then update your `config.toml` file:
+
 ```toml
 theme = "theme-name"
 ```
@@ -75,6 +79,7 @@ hugo server --noHTTPCache
 Go to `http://localhost:1313` to see your site in action.
 
 ### 6- Build Static Files for Deployment
+
 Run:
 
 ```bash
@@ -85,6 +90,7 @@ This will create a `public/` folder containing your static HTML files.
 ## Deploy Your Site on GitHub Pages
 
 ### 1- Create a Repository for Your Site
+
 1. Go to GitHub.
 2. Create a new repository.
 3. Set the name of the repository to `yourusername.github.io`.
@@ -205,6 +211,7 @@ https://yourusername.github.io/
 #### **Congratulations! Your Site is Now Live!**
 
 ## Conclusion
+
 Hugo is a game-changer for anyone looking to build a fast, scalable, and visually stunning website with minimal effort. Whether you're creating a blog, portfolio, or business site, Hugo’s speed and simplicity make it an unbeatable choice. Start your Hugo journey today and experience the future of web development!
 
 
