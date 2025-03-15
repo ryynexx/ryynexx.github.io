@@ -69,7 +69,7 @@ GitHub is a web-based service, but **Git** is the command-line tool that powers 
 
 To use Git, follow these steps:
 
-### 1️⃣ Install Git
+### 1️ Install Git
 
 **On Linux:**
 
@@ -93,7 +93,7 @@ After installing, check if it is available:
 git --version
 ```
 
-### 2️⃣ Set Up Git
+### 2️ Set Up Git
 
 After installation, configure your Git identity:
 
@@ -108,19 +108,19 @@ To verify your identity, run:
 git config --list
 ```
 
-### 3️⃣ Create a GitHub Repository
+### 3️ Create a GitHub Repository
 
 1. Go to GitHub and click **New Repository**
 2. Give it a name and choose public or private
 3. Copy the repository URL
 
-### 4️⃣ Clone the Repository Locally
+### 4️ Clone the Repository Locally
 
 ```sh
 git clone https://github.com/your-username/your-repo.git
 ```
 
-### 5️⃣ Make Changes and Commit
+### 5️ Make Changes and Commit
 
 Modify files, then track and save changes:
 
@@ -129,7 +129,7 @@ git add .  # Stages all changes
 git commit -m "Added a new feature"
 ```
 
-### 6️⃣ Push Changes to GitHub
+### 6️ Push Changes to GitHub
 
 ```sh
 git push -u origin main
