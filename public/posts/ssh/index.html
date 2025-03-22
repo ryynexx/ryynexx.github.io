@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Unlocking Secure Connections: A Dive into SSH | ryynexx</title>
+<meta name="keywords" content="ssh, security, remoteconnection, ubuntu, server">
+<meta name="description" content="In today’s interconnected world, secure access to remote systems is a game-changer for administrators, developers, and IT professionals. Secure Shell (SSH) stands as the ultimate tool for establishing encrypted connections to remote machines over an unsecured network. This blog will walk you through SSH’s core concepts, its working mechanism, and how to make the most of it.
+What is SSH?
+SSH, or Secure Shell, is a cryptographic network protocol designed to enable secure communication between two devices. It replaces outdated protocols like Telnet and FTP, which transmit data in plain text, leaving them vulnerable to eavesdropping and cyber threats. With SSH, all data is encrypted, ensuring both privacy and security during transmission.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/ssh/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/ssh/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="ryynexx (Alt + H)">ryynexx</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Unlocking Secure Connections: A Dive into SSH
+    </h1>
+    <div class="post-meta"><span title='2025-03-15 09:30:30 +1100 +1100'>March 15, 2025</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-ssh" aria-label="What is SSH?">What is SSH?</a></li>
+                <li>
+                    <a href="#how-does-ssh-work" aria-label="How Does SSH Work?">How Does SSH Work?</a></li>
+                <li>
+                    <a href="#setting-up-a-secure-ssh-connection" aria-label="Setting Up a Secure SSH Connection">Setting Up a Secure SSH Connection</a><ul>
+                        
+                <li>
+                    <a href="#installing-the-ssh-client" aria-label="Installing the SSH Client">Installing the SSH Client</a></li>
+                <li>
+                    <a href="#installing-the-ssh-server" aria-label="Installing the SSH Server">Installing the SSH Server</a></li>
+                <li>
+                    <a href="#establishing-an-ssh-connection" aria-label="Establishing an SSH Connection">Establishing an SSH Connection</a></li>
+                <li>
+                    <a href="#success-youre-now-securely-connected" aria-label="Success! You’re Now Securely Connected!">Success! You’re Now Securely Connected!</a></li>
+                <li>
+                    <a href="#whats-next-exploring-sshs-capabilities" aria-label="What’s Next? Exploring SSH’s Capabilities">What’s Next? Exploring SSH’s Capabilities</a></li>
+                <li>
+                    <a href="#ending-connection" aria-label="Ending Connection">Ending Connection</a></li></ul>
+                </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>In today’s interconnected world, secure access to remote systems is a game-changer for administrators, developers, and IT professionals. Secure Shell (SSH) stands as the ultimate tool for establishing encrypted connections to remote machines over an unsecured network. This blog will walk you through SSH’s core concepts, its working mechanism, and how to make the most of it.</p>
+<h2 id="what-is-ssh">What is SSH?<a hidden class="anchor" aria-hidden="true" href="#what-is-ssh">#</a></h2>
+<p>SSH, or Secure Shell, is a cryptographic network protocol designed to enable secure communication between two devices. It replaces outdated protocols like Telnet and FTP, which transmit data in plain text, leaving them vulnerable to eavesdropping and cyber threats. With SSH, all data is encrypted, ensuring both privacy and security during transmission.</p>
+<h2 id="how-does-ssh-work">How Does SSH Work?<a hidden class="anchor" aria-hidden="true" href="#how-does-ssh-work">#</a></h2>
+<p>SSH operates on a client-server model. Here’s a simple breakdown of how it functions:</p>
+<ol>
+<li><strong>Client Initiation</strong>: The SSH client initiates a secure connection request to the SSH server.</li>
+<li><strong>Authentication</strong>: The server verifies the client&rsquo;s identity through passwords or SSH key authentication.</li>
+<li><strong>Encryption</strong>: Once authenticated, SSH encrypts the session using secure algorithms like AES or ChaCha20.</li>
+<li><strong>Secure Interaction</strong>: Users can now execute remote commands, transfer files, and establish tunneling, all within a protected environment.</li>
+</ol>
+<blockquote>
+<p><strong>Fun Fact:</strong> The default SSH port is 22, but security-conscious users often change it to something else to prevent automated attacks!</p></blockquote>
+<h2 id="setting-up-a-secure-ssh-connection">Setting Up a Secure SSH Connection<a hidden class="anchor" aria-hidden="true" href="#setting-up-a-secure-ssh-connection">#</a></h2>
+<p>Before establishing an SSH connection, ensure both your local and remote devices have an SSH server and client installed. On Linux-based systems, OpenSSH is the go-to open-source tool, accessible through the terminal.</p>
+<h3 id="installing-the-ssh-client">Installing the SSH Client<a hidden class="anchor" aria-hidden="true" href="#installing-the-ssh-client">#</a></h3>
+<p>To install the SSH client on Debian-based or Ubuntu systems, open the terminal and run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install openssh-client
+</span></span></code></pre></div><p>To confirm successful installation, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh
+</span></span></code></pre></div><p>Once installed, you can securely connect to any active SSH server.</p>
+<h3 id="installing-the-ssh-server">Installing the SSH Server<a hidden class="anchor" aria-hidden="true" href="#installing-the-ssh-server">#</a></h3>
+<p>For remote access, the target device must have an SSH server installed and actively running to accept connections.</p>
+<p>To install the SSH server, use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install openssh-server
+</span></span></code></pre></div><p>To check if the SSH server is running, enter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl status sshd
+</span></span></code></pre></div><p>Once the SSH server is up and running, your device is ready to accept remote connections.</p>
+<h3 id="establishing-an-ssh-connection">Establishing an SSH Connection<a hidden class="anchor" aria-hidden="true" href="#establishing-an-ssh-connection">#</a></h3>
+<ol>
+<li>Open a terminal on your local machine.</li>
+<li>Retrieve the IP address of your remote system by running:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip a
+</span></span></code></pre></div><ol start="3">
+<li>Use the following command, replacing <code>&lt;your_username&gt;</code> and <code>&lt;host_ip_address&gt;</code> with the actual values:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh your_username@host_ip_address
+</span></span></code></pre></div><p>If your local and remote usernames match, simply use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh host_ip_address
+</span></span></code></pre></div><ol start="4">
+<li>Press <strong>Enter</strong>, then provide the password when prompted.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Both the client and server devices must be on the same network for a successful connection.</p></blockquote>
+<h3 id="success-youre-now-securely-connected"><strong>Success! You’re Now Securely Connected!</strong><a hidden class="anchor" aria-hidden="true" href="#success-youre-now-securely-connected">#</a></h3>
+<p>Congratulations! You have now successfully established a secure SSH connection to the remote server.</p>
+<h3 id="whats-next-exploring-sshs-capabilities">What’s Next? Exploring SSH’s Capabilities<a hidden class="anchor" aria-hidden="true" href="#whats-next-exploring-sshs-capabilities">#</a></h3>
+<p>With your local device now linked to the remote system, you gain full access to its terminal. This means you can:</p>
+<ul>
+<li>Transfer files between systems effortlessly.</li>
+<li>Remotely execute commands with full control.</li>
+<li>Modify configurations and automate administrative tasks.</li>
+</ul>
+<p>The possibilities are endless!</p>
+<h3 id="ending-connection">Ending Connection<a hidden class="anchor" aria-hidden="true" href="#ending-connection">#</a></h3>
+<p>Once you are done with your work on th server end connection with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exit
+</span></span></code></pre></div><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>SSH is more than just a remote access tool—it’s a powerhouse for secure, efficient, and flexible system management. Whether you&rsquo;re a seasoned sysadmin or a budding developer, mastering SSH will enhance your workflow and bolster your security practices.</p>
+<p>SSH isn’t just a protocol—it’s your key to unlocking seamless, secure, and limitless remote computing!</p>
+<p>Stay secure, and happy coding! 🚀</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/ssh/">Ssh</a></li>
+      <li><a href="http://localhost:1313/tags/security/">Security</a></li>
+      <li><a href="http://localhost:1313/tags/remoteconnection/">Remoteconnection</a></li>
+      <li><a href="http://localhost:1313/tags/ubuntu/">Ubuntu</a></li>
+      <li><a href="http://localhost:1313/tags/server/">Server</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">ryynexx</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

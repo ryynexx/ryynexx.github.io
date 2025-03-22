@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Security on ryynexx</title>
+    <link>http://localhost:1313/tags/security/</link>
+    <description>Recent content in Security on ryynexx</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Mar 2025 09:30:30 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unlocking Secure Connections: A Dive into SSH</title>
+      <link>http://localhost:1313/posts/ssh/</link>
+      <pubDate>Sat, 15 Mar 2025 09:30:30 +1100</pubDate>
+      <guid>http://localhost:1313/posts/ssh/</guid>
+      <description>&lt;p&gt;In today’s interconnected world, secure access to remote systems is a game-changer for administrators, developers, and IT professionals. Secure Shell (SSH) stands as the ultimate tool for establishing encrypted connections to remote machines over an unsecured network. This blog will walk you through SSH’s core concepts, its working mechanism, and how to make the most of it.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-ssh&#34;&gt;What is SSH?&lt;/h2&gt;
+&lt;p&gt;SSH, or Secure Shell, is a cryptographic network protocol designed to enable secure communication between two devices. It replaces outdated protocols like Telnet and FTP, which transmit data in plain text, leaving them vulnerable to eavesdropping and cyber threats. With SSH, all data is encrypted, ensuring both privacy and security during transmission.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
