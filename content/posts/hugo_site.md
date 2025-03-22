@@ -83,7 +83,7 @@ Launch the local server:
 hugo server --noHTTPCache
 ```
 
-Here we use the `--noHTTPCache` flag to avoid cache-related bugs that could affect the server.
+>**Note:** Here we use the `--noHTTPCache` flag to avoid cache-related bugs that could affect the server.
 
 Access your site at `http://localhost:1313`.
 
