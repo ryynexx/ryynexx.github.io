@@ -94,7 +94,7 @@ SSH, or Secure Shell, is a cryptographic network protocol designed to enable sec
     <h1 class="post-title entry-hint-parent">
       Unlocking Secure Connections: A Dive into SSH
     </h1>
-    <div class="post-meta"><span title='2025-03-15 09:30:30 +1100 +1100'>March 15, 2025</span>&nbsp;·&nbsp;3 min
+    <div class="post-meta"><span title='2025-04-22 15:52:00 +0000 +0000'>April 22, 2025</span>&nbsp;·&nbsp;4 min
 
 </div>
   </header> <div class="toc">
@@ -118,7 +118,15 @@ SSH, or Secure Shell, is a cryptographic network protocol designed to enable sec
                 <li>
                     <a href="#establishing-an-ssh-connection" aria-label="Establishing an SSH Connection">Establishing an SSH Connection</a></li>
                 <li>
-                    <a href="#success-youre-now-securely-connected" aria-label="Success! You’re Now Securely Connected!">Success! You’re Now Securely Connected!</a></li>
+                    <a href="#success-youre-now-securely-connected" aria-label="Success! You’re Now Securely Connected!">Success! You’re Now Securely Connected!</a></li></ul>
+                </li>
+                <li>
+                    <a href="#passwordless-ssh-login-speed-and-security-combined" aria-label="Passwordless SSH Login: Speed and Security Combined">Passwordless SSH Login: Speed and Security Combined</a><ul>
+                        
+                <li>
+                    <a href="#how-does-it-work" aria-label="How Does It Work?">How Does It Work?</a></li>
+                <li>
+                    <a href="#steps-to-set-up-passwordless-ssh" aria-label="Steps to Set Up Passwordless SSH">Steps to Set Up Passwordless SSH</a></li>
                 <li>
                     <a href="#whats-next-exploring-sshs-capabilities" aria-label="What’s Next? Exploring SSH’s Capabilities">What’s Next? Exploring SSH’s Capabilities</a></li>
                 <li>
@@ -183,6 +191,37 @@ SSH, or Secure Shell, is a cryptographic network protocol designed to enable sec
 <p><strong>Note:</strong> Both the client and server devices must be on the same network for a successful connection.</p></blockquote>
 <h3 id="success-youre-now-securely-connected"><strong>Success! You’re Now Securely Connected!</strong><a hidden class="anchor" aria-hidden="true" href="#success-youre-now-securely-connected">#</a></h3>
 <p>Congratulations! You have now successfully established a secure SSH connection to the remote server.</p>
+<h2 id="passwordless-ssh-login-speed-and-security-combined">Passwordless SSH Login: Speed and Security Combined<a hidden class="anchor" aria-hidden="true" href="#passwordless-ssh-login-speed-and-security-combined">#</a></h2>
+<p>Tired of typing your password every time you connect via SSH? You can streamline the process and enhance security by setting up <strong>passwordless SSH login</strong> using <strong>SSH key pairs</strong>. This method eliminates the need to enter your password repeatedly while still maintaining a secure connection.</p>
+<h3 id="how-does-it-work">How Does It Work?<a hidden class="anchor" aria-hidden="true" href="#how-does-it-work">#</a></h3>
+<p>SSH key authentication works by generating a pair of cryptographic keys:</p>
+<ul>
+<li><strong>Private Key</strong>: Stays securely on your local machine.</li>
+<li><strong>Public Key</strong>: Placed on the remote server.</li>
+</ul>
+<p>When you attempt to connect, the remote server uses your public key to verify your private key without exposing any credentials.</p>
+<h3 id="steps-to-set-up-passwordless-ssh">Steps to Set Up Passwordless SSH<a hidden class="anchor" aria-hidden="true" href="#steps-to-set-up-passwordless-ssh">#</a></h3>
+<ol>
+<li>
+<p><strong>Generate SSH Key Pair on Your Local Machine</strong></p>
+<p>Run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;SShkey&#34;</span>
+</span></span></code></pre></div><p><img alt="command screenshot" loading="lazy" src="/ssh5.png"></p>
+</li>
+<li>
+<p><strong>Copying the Public Key to the Remote Server</strong>
+There are several ways to copy your public key to the remote server. One convenient method, if you have password-based SSH access already configured, is to use the ssh-copy-id command:</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-copy-id your_username@host_ip_address
+</span></span></code></pre></div><p><img alt="command screenshot" loading="lazy" src="/ssh6.png"></p>
+<p>Replace your_username and host_ip_address with your remote username and the IP address of the remote server. You will be prompted for your password on the remote server. This command will append your public key to the ~/.ssh/authorized_keys file on the remote server.</p>
+<ol start="3">
+<li><strong>Logging in Without a Password</strong>
+Once the public key is successfully copied to the remote server&rsquo;s authorized_keys file, you should be able to log in from your local machine to the remote server without being prompted for a password:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh your_username@host_ip_address
+</span></span></code></pre></div><p><img alt="command screenshot" loading="lazy" src="/ssh7.png"></p>
 <h3 id="whats-next-exploring-sshs-capabilities">What’s Next? Exploring SSH’s Capabilities<a hidden class="anchor" aria-hidden="true" href="#whats-next-exploring-sshs-capabilities">#</a></h3>
 <p>With your local device now linked to the remote system, you gain full access to its terminal. This means you can:</p>
 <ul>
