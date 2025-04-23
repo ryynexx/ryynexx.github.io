@@ -40,6 +40,9 @@ To confirm successful installation, type:
 ssh
 ```
 
+![command screenshot](/ssh1.png)
+
+
 Once installed, you can securely connect to any active SSH server.
 
 ### Installing the SSH Server
@@ -57,6 +60,7 @@ To check if the SSH server is running, enter:
 ```bash
 sudo systemctl status sshd
 ```
+![command screenshot](/ssh2.png)
 
 Once the SSH server is up and running, your device is ready to accept remote connections.
 
@@ -68,12 +72,14 @@ Once the SSH server is up and running, your device is ready to accept remote con
 ```bash
 ip a
 ```
+![command screenshot](/ssh3.png)
 
 3. Use the following command, replacing `<your_username>` and `<host_ip_address>` with the actual values:
 
 ```sh
 ssh your_username@host_ip_address
 ```
+![command screenshot](/ssh4.png)
 
    If your local and remote usernames match, simply use:
 
@@ -88,6 +94,50 @@ ssh host_ip_address
 ### **Success! You’re Now Securely Connected!**
 
 Congratulations! You have now successfully established a secure SSH connection to the remote server.
+
+## Passwordless SSH Login: Speed and Security Combined
+
+Tired of typing your password every time you connect via SSH? You can streamline the process and enhance security by setting up **passwordless SSH login** using **SSH key pairs**. This method eliminates the need to enter your password repeatedly while still maintaining a secure connection.
+
+### How Does It Work?
+
+SSH key authentication works by generating a pair of cryptographic keys:
+- **Private Key**: Stays securely on your local machine.
+- **Public Key**: Placed on the remote server.
+
+When you attempt to connect, the remote server uses your public key to verify your private key without exposing any credentials.
+
+### Steps to Set Up Passwordless SSH
+
+1. **Generate SSH Key Pair on Your Local Machine**
+
+   Run the following command:
+
+   ```bash
+   ssh-keygen -t ed25519 -C "SShkey"
+   ```
+
+   ![command screenshot](/ssh5.png)
+
+
+2. **Copying the Public Key to the Remote Server**
+   There are several ways to copy your public key to the remote server. One convenient method, if you have password-based SSH access already configured, is to use the ssh-copy-id command:
+
+```bash
+ssh-copy-id your_username@host_ip_address
+```
+
+![command screenshot](/ssh6.png)
+
+Replace your_username and host_ip_address with your remote username and the IP address of the remote server. You will be prompted for your password on the remote server. This command will append your public key to the ~/.ssh/authorized_keys file on the remote server.
+
+3. **Logging in Without a Password**
+Once the public key is successfully copied to the remote server's authorized_keys file, you should be able to log in from your local machine to the remote server without being prompted for a password:
+
+```bash
+ssh your_username@host_ip_address
+```
+![command screenshot](/ssh7.png)
 
 ### What’s Next? Exploring SSH’s Capabilities
 
@@ -105,6 +155,7 @@ Once you are done with your work on th server end connection with:
 ```bash
 exit
 ```
+![command screenshot](/ssh8.png)
 
 ## Conclusion
 

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ssg on ryynexx</title>
-    <link>http://localhost:34519/tags/ssg/</link>
+    <link>http://localhost:1313/tags/ssg/</link>
     <description>Recent content in Ssg on ryynexx</description>
-    <generator>Hugo -- 0.145.0</generator>
+    <generator>Hugo -- 0.146.6</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Mar 2025 09:30:09 +0500</lastBuildDate>
-    <atom:link href="http://localhost:34519/tags/ssg/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ssg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Launch Your Site Swiftly: Harnessing Hugo for Rapid Web Development</title>
-      <link>http://localhost:34519/posts/hugo_site/</link>
+      <link>http://localhost:1313/posts/hugo_site/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:09 +0500</pubDate>
-      <guid>http://localhost:34519/posts/hugo_site/</guid>
+      <guid>http://localhost:1313/posts/hugo_site/</guid>
       <description>&lt;p&gt;Are you seeking a streamlined alternative to traditional web content management? Dive into Hugo, a powerhouse static site generator (SSG) renowned for its exceptional speed and efficiency. Ideal for developers, writers, and entrepreneurs alike, Hugo simplifies the creation and upkeep of high-performance websites. Let&amp;rsquo;s explore Hugo&amp;rsquo;s core strengths, guide you through setting up your project, and walk through deploying it on GitHub.&lt;/p&gt;
 &lt;h2 id=&#34;why-opt-for-hugo&#34;&gt;Why Opt for Hugo?&lt;/h2&gt;
 &lt;p&gt;Hugo&amp;rsquo;s popularity stems from its robust features:&lt;/p&gt;</description>

@@ -2,101 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on ryynexx</title>
-    <link>http://localhost:34519/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on ryynexx</description>
-    <generator>Hugo -- 0.145.0</generator>
+    <generator>Hugo -- 0.146.6</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Mar 2025 09:30:09 +0500</lastBuildDate>
-    <atom:link href="http://localhost:34519/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHubPages</title>
-      <link>http://localhost:34519/tags/githubpages/</link>
+      <link>http://localhost:1313/tags/githubpages/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:09 +0500</pubDate>
-      <guid>http://localhost:34519/tags/githubpages/</guid>
+      <guid>http://localhost:1313/tags/githubpages/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://localhost:34519/tags/hugo/</link>
+      <link>http://localhost:1313/tags/hugo/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:09 +0500</pubDate>
-      <guid>http://localhost:34519/tags/hugo/</guid>
+      <guid>http://localhost:1313/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Ssg</title>
-      <link>http://localhost:34519/tags/ssg/</link>
+      <link>http://localhost:1313/tags/ssg/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:09 +0500</pubDate>
-      <guid>http://localhost:34519/tags/ssg/</guid>
+      <guid>http://localhost:1313/tags/ssg/</guid>
       <description></description>
     </item>
     <item>
       <title>WebSpeed</title>
-      <link>http://localhost:34519/tags/webspeed/</link>
+      <link>http://localhost:1313/tags/webspeed/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:09 +0500</pubDate>
-      <guid>http://localhost:34519/tags/webspeed/</guid>
+      <guid>http://localhost:1313/tags/webspeed/</guid>
       <description></description>
     </item>
     <item>
       <title>Remoteconnection</title>
-      <link>http://localhost:34519/tags/remoteconnection/</link>
+      <link>http://localhost:1313/tags/remoteconnection/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:30 +1100</pubDate>
-      <guid>http://localhost:34519/tags/remoteconnection/</guid>
+      <guid>http://localhost:1313/tags/remoteconnection/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>http://localhost:34519/tags/security/</link>
+      <link>http://localhost:1313/tags/security/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:30 +1100</pubDate>
-      <guid>http://localhost:34519/tags/security/</guid>
+      <guid>http://localhost:1313/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Server</title>
-      <link>http://localhost:34519/tags/server/</link>
+      <link>http://localhost:1313/tags/server/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:30 +1100</pubDate>
-      <guid>http://localhost:34519/tags/server/</guid>
+      <guid>http://localhost:1313/tags/server/</guid>
       <description></description>
     </item>
     <item>
       <title>Ssh</title>
-      <link>http://localhost:34519/tags/ssh/</link>
+      <link>http://localhost:1313/tags/ssh/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:30 +1100</pubDate>
-      <guid>http://localhost:34519/tags/ssh/</guid>
+      <guid>http://localhost:1313/tags/ssh/</guid>
       <description></description>
     </item>
     <item>
       <title>Ubuntu</title>
-      <link>http://localhost:34519/tags/ubuntu/</link>
+      <link>http://localhost:1313/tags/ubuntu/</link>
       <pubDate>Sat, 15 Mar 2025 09:30:30 +1100</pubDate>
-      <guid>http://localhost:34519/tags/ubuntu/</guid>
+      <guid>http://localhost:1313/tags/ubuntu/</guid>
       <description></description>
     </item>
     <item>
       <title>Coding</title>
-      <link>http://localhost:34519/tags/coding/</link>
+      <link>http://localhost:1313/tags/coding/</link>
       <pubDate>Mon, 10 Mar 2025 09:43:45 +0500</pubDate>
-      <guid>http://localhost:34519/tags/coding/</guid>
+      <guid>http://localhost:1313/tags/coding/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:34519/tags/git/</link>
+      <link>http://localhost:1313/tags/git/</link>
       <pubDate>Mon, 10 Mar 2025 09:43:45 +0500</pubDate>
-      <guid>http://localhost:34519/tags/git/</guid>
+      <guid>http://localhost:1313/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Github</title>
-      <link>http://localhost:34519/tags/github/</link>
+      <link>http://localhost:1313/tags/github/</link>
       <pubDate>Mon, 10 Mar 2025 09:43:45 +0500</pubDate>
-      <guid>http://localhost:34519/tags/github/</guid>
+      <guid>http://localhost:1313/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Productivity</title>
-      <link>http://localhost:34519/tags/productivity/</link>
+      <link>http://localhost:1313/tags/productivity/</link>
       <pubDate>Mon, 10 Mar 2025 09:43:45 +0500</pubDate>
-      <guid>http://localhost:34519/tags/productivity/</guid>
+      <guid>http://localhost:1313/tags/productivity/</guid>
       <description></description>
     </item>
   </channel>
