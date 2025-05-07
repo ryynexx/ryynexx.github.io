@@ -4,10 +4,18 @@
     <title>Posts on ryynexx</title>
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on ryynexx</description>
-    <generator>Hugo -- 0.146.6</generator>
+    <generator>Hugo -- 0.147.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Apr 2025 15:52:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 May 2025 20:32:52 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Demystifying the Kernel: A Journey into Compilation</title>
+      <link>http://localhost:1313/posts/kernel_compilation/</link>
+      <pubDate>Wed, 07 May 2025 20:32:52 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kernel_compilation/</guid>
+      <description>&lt;p&gt;Ever wondered how your operating system, the very foundation of your digital world, comes to life? At its heart lies the kernel, the core program that manages your computer&amp;rsquo;s resources, from the CPU and memory to peripherals. While most users interact with their OS through a user-friendly interface, the kernel operates behind the scenes, diligently orchestrating everything.&lt;/p&gt;
+&lt;p&gt;But how does this essential piece of software get built and tailored to your specific hardware? The answer lies in kernel compilation.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Unlocking Secure Connections: A Dive into SSH</title>
       <link>http://localhost:1313/posts/ssh/</link>
@@ -42,13 +50,6 @@
       <pubDate>Mon, 10 Mar 2025 09:43:45 +0500</pubDate>
       <guid>http://localhost:1313/posts/my-first-post/</guid>
       <description>&lt;p&gt;my first post&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/kernel_compilation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/kernel_compilation/</guid>
-      <description></description>
     </item>
   </channel>
 </rss>

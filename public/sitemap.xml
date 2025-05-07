@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/compilation/</loc>
+    <lastmod>2025-05-07T20:32:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/customization/</loc>
+    <lastmod>2025-05-07T20:32:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/kernel_compilation/</loc>
+    <lastmod>2025-05-07T20:32:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kernel/</loc>
+    <lastmod>2025-05-07T20:32:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2025-05-07T20:32:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/performance/</loc>
+    <lastmod>2025-05-07T20:32:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-07T20:32:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-07T20:32:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-07T20:32:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/remoteconnection/</loc>
+    <lastmod>2025-04-22T15:52:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security/</loc>
+    <lastmod>2025-04-22T15:52:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/server/</loc>
+    <lastmod>2025-04-22T15:52:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ssh/</loc>
+    <lastmod>2025-04-22T15:52:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ubuntu/</loc>
+    <lastmod>2025-04-22T15:52:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/ssh/</loc>
+    <lastmod>2025-04-22T15:52:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/githubpages/</loc>
     <lastmod>2025-03-15T09:30:09+05:00</lastmod>
   </url><url>
@@ -11,38 +56,11 @@
     <loc>http://localhost:1313/posts/hugo_site/</loc>
     <lastmod>2025-03-15T09:30:09+05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-03-15T09:30:09+05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-03-15T09:30:09+05:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/ssg/</loc>
-    <lastmod>2025-03-15T09:30:09+05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-03-15T09:30:09+05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/webspeed/</loc>
     <lastmod>2025-03-15T09:30:09+05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/remoteconnection/</loc>
-    <lastmod>2025-03-15T09:30:30+11:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
-    <lastmod>2025-03-15T09:30:30+11:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/server/</loc>
-    <lastmod>2025-03-15T09:30:30+11:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ssh/</loc>
-    <lastmod>2025-03-15T09:30:30+11:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ubuntu/</loc>
-    <lastmod>2025-03-15T09:30:30+11:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/ssh/</loc>
-    <lastmod>2025-03-15T09:30:30+11:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/coding/</loc>
     <lastmod>2025-03-10T09:43:45+05:00</lastmod>
@@ -61,8 +79,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/productivity/</loc>
     <lastmod>2025-03-10T09:43:45+05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/kernel_compilation/</loc>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
   </url><url>

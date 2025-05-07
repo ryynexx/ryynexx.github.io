@@ -59,7 +59,7 @@ sudo apt install -y build-essential libncurses-dev flex bison libelf-dev libssl-
 
 This command is for Debian-based distributions like Ubuntu.
 
-![kernel3.png](kernel3.png)
+![kernel_1.png](/kernel_1.png)
 
 ## Step 2: Kernel Source
 
@@ -70,7 +70,7 @@ uname -r
 nproc
 ```
 
-![kernel16.png](kernel16.png)
+![kernel16.png](/kernel16.png)
 
 To get the latest stable version of the Linux kernel, visit:
 
@@ -78,8 +78,8 @@ To get the latest stable version of the Linux kernel, visit:
 
 Download the latest stable version of the Linux kernel source in tarball (`.tar.xz`) format.
 
-![kernel1.png](kernel1.png)  
-![kernel2.png](kernel2.png)
+![kernel2.png](/kernel_2.png)  
+![kernel3.png](/kernel_3.png)
 
 ## Step 3: Extraction of the Source
 
@@ -100,7 +100,7 @@ This command is a clean-up command used in the Linux kernel build system — it 
 
 **Note:** You use `make mrproper` before kernel compilation mainly to ensure a clean, reliable build environment — avoiding issues caused by leftover files from previous builds.
 
-![kernel7.png](kernel7.png)
+![kernel4.png](/kernel_4.png)
 
 ## Step 4: Kernel Configuration
 
@@ -114,7 +114,7 @@ Use this method if you are just trying out kernel compilation or if you need you
 make defconfig
 ```
 
-![kernel8.png](kernel8.png)
+![kernel5.png](/kernel_5.png)
 
 ### 2. Use Old Kernel Config
 
@@ -144,8 +144,8 @@ make -j$(nproc)
 
 This tells `make` to run up to the number of jobs equal to the number of processors. If you have a number of them, use them all.
 
-![kernel9.png](kernel9.png)  
-![kernel11.png](kernel11.png)
+![kernel6.png](/kernel_6.png)  
+![kernel7.png](/kernel_7.png)
 
 This might take some time, but if everything goes well, your patience will be rewarded.
 
@@ -157,7 +157,7 @@ To install the kernel modules, run:
 sudo make modules_install
 ```
 
-![kernel12.png](kernel12.png)
+![kernel8.png](/kernel_8.png)
 
 To install the kernel, run:
 
@@ -165,14 +165,14 @@ To install the kernel, run:
 sudo make install
 ```
 
-![kernel13.png](kernel13.png)
+![kernel9.png](/kernel_9.png)
 
 ## Step 7: GRUB Modification
 
 Customize the GRUB bootloader by increasing the GRUB timeout.
 
-![kernel17.png](kernel17.png)  
-![kernel14.png](kernel14.png)
+![kernel10.png](/kernel_10.png)  
+![kernel11.png](/kernel_11.png)
 
 Make sure these lines are set in `/etc/default/grub`:
 
@@ -197,7 +197,7 @@ uname -r
 
 To check the version.
 
-![kernel18.png](kernel18.png)
+![kernel12.png](/kernel_12.png)
 
 ## Done: You Have Compiled and Booted Your Own Kernel
 

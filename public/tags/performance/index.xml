@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Performance on ryynexx</title>
+    <link>http://localhost:1313/tags/performance/</link>
+    <description>Recent content in Performance on ryynexx</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 May 2025 20:32:52 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Demystifying the Kernel: A Journey into Compilation</title>
+      <link>http://localhost:1313/posts/kernel_compilation/</link>
+      <pubDate>Wed, 07 May 2025 20:32:52 +0000</pubDate>
+      <guid>http://localhost:1313/posts/kernel_compilation/</guid>
+      <description>&lt;p&gt;Ever wondered how your operating system, the very foundation of your digital world, comes to life? At its heart lies the kernel, the core program that manages your computer&amp;rsquo;s resources, from the CPU and memory to peripherals. While most users interact with their OS through a user-friendly interface, the kernel operates behind the scenes, diligently orchestrating everything.&lt;/p&gt;
+&lt;p&gt;But how does this essential piece of software get built and tailored to your specific hardware? The answer lies in kernel compilation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
