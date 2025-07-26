@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Effortless Transfers with rsync: A Power Tool for Every Linux User | ryynexx</title>
+<meta name="keywords" content="rsync, linux, file-transfer, synchronization, productivity">
+<meta name="description" content="
+Working with files across directories or systems? rsync makes it faster, smarter, and easier — and it’s one of the best tools every Linux user should know.
+
+Understanding rsync
+What is rsync?
+rsync stands for remote synchronization. It’s a command-line utility for efficiently transferring and synchronizing files between local or remote systems on Linux and Unix-like systems.
+
+Why use rsync over cp or scp?
+While cp and scp are helpful for basic file transfers, rsync offers features that make it superior:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/rsyn/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.93f625d739f1d6a5c6f20c146bc6a8d26b233492b34b2220c54b12fd46a04ded.css" integrity="sha256-k/Yl1znx1qXG8gwUa8ao0msjNJKzSyIgxUsS/UagTe0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/rsyn/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="ryynexx (Alt + H)">ryynexx</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Effortless Transfers with rsync: A Power Tool for Every Linux User
+    </h1>
+    <div class="post-meta"><span title='2025-06-19 17:30:00 +0500 PKT'>June 19, 2025</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#understanding-rsync" aria-label="Understanding rsync">Understanding rsync</a><ul>
+                        
+                <li>
+                    <a href="#what-is-rsync" aria-label="What is rsync?">What is rsync?</a></li>
+                <li>
+                    <a href="#why-use-rsync-over-cp-or-scp" aria-label="Why use rsync over cp or scp?">Why use rsync over cp or scp?</a></li></ul>
+                </li>
+                <li>
+                    <a href="#how-rsync-works" aria-label="How rsync Works">How rsync Works</a><ul>
+                        
+                <li>
+                    <a href="#sync-mechanisms" aria-label="Sync Mechanisms">Sync Mechanisms</a></li>
+                <li>
+                    <a href="#what-gets-synced" aria-label="What Gets Synced?">What Gets Synced?</a></li></ul>
+                </li>
+                <li>
+                    <a href="#commonly-used-options" aria-label="Commonly Used Options">Commonly Used Options</a></li>
+                <li>
+                    <a href="#basic-usage" aria-label="Basic Usage">Basic Usage</a><ul>
+                        
+                <li>
+                    <a href="#syntax" aria-label="Syntax">Syntax</a></li>
+                <li>
+                    <a href="#push-example-local-to-remote" aria-label="Push Example (Local to Remote)">Push Example (Local to Remote)</a></li>
+                <li>
+                    <a href="#pull-example-remote-to-local" aria-label="Pull Example (Remote to Local)">Pull Example (Remote to Local)</a></li>
+                <li>
+                    <a href="#important-note-on-trailing-slashes" aria-label="Important Note on Trailing Slashes">Important Note on Trailing Slashes</a></li></ul>
+                </li>
+                <li>
+                    <a href="#additional-features-and-options" aria-label="Additional Features and Options">Additional Features and Options</a><ul>
+                        
+                <li>
+                    <a href="#show-progress" aria-label="Show Progress">Show Progress</a></li>
+                <li>
+                    <a href="#delete-files-in-destination" aria-label="Delete Files in Destination">Delete Files in Destination</a></li>
+                <li>
+                    <a href="#exclude-specific-files" aria-label="Exclude Specific Files">Exclude Specific Files</a></li>
+                <li>
+                    <a href="#dry-run-test-before-running" aria-label="Dry Run (Test Before Running)">Dry Run (Test Before Running)</a></li>
+                <li>
+                    <a href="#backup-while-syncing" aria-label="Backup While Syncing">Backup While Syncing</a></li></ul>
+                </li>
+                <li>
+                    <a href="#final-thoughts" aria-label="Final Thoughts">Final Thoughts</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<p>Working with files across directories or systems? <code>rsync</code> makes it faster, smarter, and easier — and it’s one of the best tools every Linux user should know.</p>
+<hr>
+<h2 id="understanding-rsync">Understanding rsync<a hidden class="anchor" aria-hidden="true" href="#understanding-rsync">#</a></h2>
+<h3 id="what-is-rsync">What is rsync?<a hidden class="anchor" aria-hidden="true" href="#what-is-rsync">#</a></h3>
+<p><code>rsync</code> stands for <strong>remote synchronization</strong>. It’s a command-line utility for efficiently transferring and synchronizing files between local or remote systems on Linux and Unix-like systems.</p>
+<hr>
+<h3 id="why-use-rsync-over-cp-or-scp">Why use rsync over cp or scp?<a hidden class="anchor" aria-hidden="true" href="#why-use-rsync-over-cp-or-scp">#</a></h3>
+<p>While <code>cp</code> and <code>scp</code> are helpful for basic file transfers, <code>rsync</code> offers features that make it superior:</p>
+<ul>
+<li>Supports <strong>both local and remote</strong> sync</li>
+<li>Transfers only <strong>changed parts</strong> of files</li>
+<li>Includes <strong>compression</strong></li>
+<li>Much <strong>faster</strong> and <strong>more efficient</strong></li>
+<li>Preserves <strong>permissions, ownerships, timestamps</strong>, etc.</li>
+</ul>
+<hr>
+<h2 id="how-rsync-works">How rsync Works<a hidden class="anchor" aria-hidden="true" href="#how-rsync-works">#</a></h2>
+<h3 id="sync-mechanisms">Sync Mechanisms<a hidden class="anchor" aria-hidden="true" href="#sync-mechanisms">#</a></h3>
+<p><code>rsync</code> works in two main ways:</p>
+<ul>
+<li>Over a <strong>remote shell</strong> like <code>ssh</code></li>
+<li>Using an <strong>rsync daemon</strong> over TCP</li>
+</ul>
+<p>It uses a <strong>delta-transfer algorithm</strong>, copying only the differences between source and destination.</p>
+<hr>
+<h3 id="what-gets-synced">What Gets Synced?<a hidden class="anchor" aria-hidden="true" href="#what-gets-synced">#</a></h3>
+<p>During synchronization, <code>rsync</code> intelligently:</p>
+<ul>
+<li><strong>Copies</strong> files that are missing on the destination</li>
+<li><strong>Updates</strong> only the changed portions of modified files</li>
+<li><strong>Skips</strong> files that are already identical</li>
+</ul>
+<hr>
+<h2 id="commonly-used-options">Commonly Used Options<a hidden class="anchor" aria-hidden="true" href="#commonly-used-options">#</a></h2>
+<p>Here&rsquo;s a breakdown of important options:</p>
+<ul>
+<li><code>-a</code>, <code>--archive</code>: Recursive copy with preservation (permissions, symlinks, etc.)</li>
+<li><code>-v</code>, <code>--verbose</code>: Show detailed output; use multiple <code>-v</code>s for more info</li>
+<li><code>-h</code>, <code>--human-readable</code>: Display sizes in a readable format</li>
+<li><code>-z</code>, <code>--compress</code>: Compress file data during transfer</li>
+<li><code>-e</code>: Specify protocol (commonly used with <code>ssh</code>)</li>
+</ul>
+<hr>
+<h2 id="basic-usage">Basic Usage<a hidden class="anchor" aria-hidden="true" href="#basic-usage">#</a></h2>
+<h3 id="syntax">Syntax<a hidden class="anchor" aria-hidden="true" href="#syntax">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> source destination
+</span></span></code></pre></div><hr>
+<h3 id="push-example-local-to-remote">Push Example (Local to Remote)<a hidden class="anchor" aria-hidden="true" href="#push-example-local-to-remote">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -avhze ssh ~/dir1 username@remote_host:/destination/directory
+</span></span></code></pre></div><hr>
+<h3 id="pull-example-remote-to-local">Pull Example (Remote to Local)<a hidden class="anchor" aria-hidden="true" href="#pull-example-remote-to-local">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -avhze ssh username@remote_host:/home/username/dir1 /local/directory
+</span></span></code></pre></div><hr>
+<h3 id="important-note-on-trailing-slashes">Important Note on Trailing Slashes<a hidden class="anchor" aria-hidden="true" href="#important-note-on-trailing-slashes">#</a></h3>
+<p>If you want to copy <strong>only the contents</strong> of a directory, include a trailing slash <code>/</code> at the end of the source:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -a dir/ dir2
+</span></span></code></pre></div><p>Without the <code>/</code>, <code>dir</code> itself is copied into <code>dir2</code>.</p>
+<hr>
+<h2 id="additional-features-and-options">Additional Features and Options<a hidden class="anchor" aria-hidden="true" href="#additional-features-and-options">#</a></h2>
+<h3 id="show-progress">Show Progress<a hidden class="anchor" aria-hidden="true" href="#show-progress">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -azP source destination
+</span></span></code></pre></div><p><code>-P</code> displays transfer progress and keeps partially transferred files.</p>
+<hr>
+<h3 id="delete-files-in-destination">Delete Files in Destination<a hidden class="anchor" aria-hidden="true" href="#delete-files-in-destination">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -a --delete source destination
+</span></span></code></pre></div><p>Removes files from the destination that no longer exist in the source.</p>
+<hr>
+<h3 id="exclude-specific-files">Exclude Specific Files<a hidden class="anchor" aria-hidden="true" href="#exclude-specific-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -a --exclude<span style="color:#f92672">=</span>pattern_to_exclude source destination
+</span></span></code></pre></div><p>Skip syncing files or directories matching the given pattern.</p>
+<hr>
+<h3 id="dry-run-test-before-running">Dry Run (Test Before Running)<a hidden class="anchor" aria-hidden="true" href="#dry-run-test-before-running">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -anv source destination
+</span></span></code></pre></div><p>Simulates the command and shows what would happen — very helpful for double-checking.</p>
+<hr>
+<h3 id="backup-while-syncing">Backup While Syncing<a hidden class="anchor" aria-hidden="true" href="#backup-while-syncing">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -a --delete --backup --backup-dir<span style="color:#f92672">=</span>/path/to/backups /path/to/source destination
+</span></span></code></pre></div><p>Creates backups of overwritten or deleted files in a separate backup directory.</p>
+<hr>
+<h2 id="final-thoughts">Final Thoughts<a hidden class="anchor" aria-hidden="true" href="#final-thoughts">#</a></h2>
+<p>That’s almost everything you need to know to get started with <code>rsync</code>. It&rsquo;s a tool that&rsquo;s:</p>
+<ul>
+<li>Fast and efficient</li>
+<li>Easy to test with <code>--dry-run</code></li>
+<li>Flexible with includes/excludes, SSH, and automation</li>
+</ul>
+<p>So go ahead — try it out and take control of your file transfers like a pro!</p>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/rsync/">Rsync</a></li>
+      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
+      <li><a href="http://localhost:1313/tags/file-transfer/">File-Transfer</a></li>
+      <li><a href="http://localhost:1313/tags/synchronization/">Synchronization</a></li>
+      <li><a href="http://localhost:1313/tags/productivity/">Productivity</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">ryynexx</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

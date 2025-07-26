@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on ryynexx</title>
+    <link>http://localhost:1313/tags/python/</link>
+    <description>Recent content in Python on ryynexx</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Jul 2025 17:00:00 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Raw Data to Insight: Your Guide to Python&#39;s Data Science Trio — Pandas, NumPy, and Matplotlib</title>
+      <link>http://localhost:1313/posts/pyhton_libraries/</link>
+      <pubDate>Thu, 17 Jul 2025 17:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/posts/pyhton_libraries/</guid>
+      <description>&lt;h1 id=&#34;from-raw-data-to-insight-your-guide-to-pythons-data-science-trio--pandas-numpy-and-matplotlib&#34;&gt;From Raw Data to Insight: Your Guide to Python&amp;rsquo;s Data Science Trio — Pandas, NumPy, and Matplotlib&lt;/h1&gt;
+&lt;p&gt;Python has become the language of choice for data science, analytics, AI, and scientific computing. The reason for that lies in its powerful data manipulation libraries — the essential trio of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;NumPy&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pandas&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Matplotlib&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is a must-use combo for dealing with raw data, numbers, calculations, and even visualization of any data. Whether you&amp;rsquo;re exploring sales trends, running scientific simulations, or building machine learning models — this is where it all begins.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -4,10 +4,47 @@
     <title>Linux on ryynexx</title>
     <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on ryynexx</description>
-    <generator>Hugo -- 0.147.0</generator>
+    <generator>Hugo -- 0.148.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 May 2025 20:32:52 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Jul 2025 17:30:00 +0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Effortless Transfers with rsync: A Power Tool for Every Linux User</title>
+      <link>http://localhost:1313/posts/rsyn/</link>
+      <pubDate>Thu, 17 Jul 2025 17:30:00 +0500</pubDate>
+      <guid>http://localhost:1313/posts/rsyn/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Working with files across directories or systems? &lt;code&gt;rsync&lt;/code&gt; makes it faster, smarter, and easier — and it’s one of the best tools every Linux user should know.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;understanding-rsync&#34;&gt;Understanding rsync&lt;/h2&gt;
+&lt;h3 id=&#34;what-is-rsync&#34;&gt;What is rsync?&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;rsync&lt;/code&gt; stands for &lt;strong&gt;remote synchronization&lt;/strong&gt;. It’s a command-line utility for efficiently transferring and synchronizing files between local or remote systems on Linux and Unix-like systems.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;why-use-rsync-over-cp-or-scp&#34;&gt;Why use rsync over cp or scp?&lt;/h3&gt;
+&lt;p&gt;While &lt;code&gt;cp&lt;/code&gt; and &lt;code&gt;scp&lt;/code&gt; are helpful for basic file transfers, &lt;code&gt;rsync&lt;/code&gt; offers features that make it superior:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>From Command Line to Automation: Your Bash Journey Begins</title>
+      <link>http://localhost:1313/posts/bash_scripting/</link>
+      <pubDate>Thu, 17 Jul 2025 17:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/posts/bash_scripting/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Being on your terminal, you must have faced doing a single task repetitively. For that, we have &lt;strong&gt;Bash scripting&lt;/strong&gt; — it lets you automate repetitive tasks using a single command.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;what-is-bash-scripting&#34;&gt;What is Bash Scripting&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Bash&lt;/strong&gt; (Bourne Again Shell) is the default command-line shell on most Linux distributions and macOS.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;Bash script&lt;/strong&gt; is a file that contains commands written line by line, which the shell can execute.&lt;/p&gt;
+&lt;p&gt;It’s like writing a to-do list for your computer — and by running the script, all your commands in it will run on their own.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>From Command Line to Automation: Your Bash Journey Begins</title>
+      <link>http://localhost:1313/posts/multithreading/</link>
+      <pubDate>Thu, 17 Jul 2025 17:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/posts/multithreading/</guid>
+      <description>&lt;hr&gt;
+&lt;h1 id=&#34;understanding-multithreading-in-python-a-beginners-guide&#34;&gt;Understanding Multithreading in Python: A Beginner&amp;rsquo;s Guide&lt;/h1&gt;
+&lt;p&gt;Ever wished you could complete all your tasks at once—handle chores, finish assignments, and relax—all simultaneously? While humans might struggle with efficient multitasking, your computer excels at it. Thanks to &lt;strong&gt;multithreading&lt;/strong&gt;, it can run multiple instructions concurrently. This is what allows your browser to load multiple tabs at once and enables a game to respond to input while rendering graphics in real time.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Demystifying the Kernel: A Journey into Compilation</title>
       <link>http://localhost:1313/posts/kernel_compilation/</link>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rsync on ryynexx</title>
+    <link>http://localhost:1313/tags/rsync/</link>
+    <description>Recent content in Rsync on ryynexx</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Jul 2025 17:30:00 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Effortless Transfers with rsync: A Power Tool for Every Linux User</title>
+      <link>http://localhost:1313/posts/rsyn/</link>
+      <pubDate>Thu, 17 Jul 2025 17:30:00 +0500</pubDate>
+      <guid>http://localhost:1313/posts/rsyn/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Working with files across directories or systems? &lt;code&gt;rsync&lt;/code&gt; makes it faster, smarter, and easier — and it’s one of the best tools every Linux user should know.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;understanding-rsync&#34;&gt;Understanding rsync&lt;/h2&gt;
+&lt;h3 id=&#34;what-is-rsync&#34;&gt;What is rsync?&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;rsync&lt;/code&gt; stands for &lt;strong&gt;remote synchronization&lt;/strong&gt;. It’s a command-line utility for efficiently transferring and synchronizing files between local or remote systems on Linux and Unix-like systems.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;why-use-rsync-over-cp-or-scp&#34;&gt;Why use rsync over cp or scp?&lt;/h3&gt;
+&lt;p&gt;While &lt;code&gt;cp&lt;/code&gt; and &lt;code&gt;scp&lt;/code&gt; are helpful for basic file transfers, &lt;code&gt;rsync&lt;/code&gt; offers features that make it superior:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
