@@ -8,10 +8,10 @@ theme = 'hugo-PaperMod'
     enabled = true
     title = "Rabeesha Ijaz"
     subtitle = "Breaking Down Bytes & Bits"
-    imageUrl = "pfp2.JPG"
+    imageUrl = "pfp3.jpg"
     imageTitle = "Profile Picture"
-    imageWidth = 200
-    imageHeight = 200
+    imageWidth = 300
+    imageHeight = 300
 
 [[params.profileMode.buttons]]
     name = "About Me"
