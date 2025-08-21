@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Huffman Coding Made Simple: Compressing Without Compromise | ryynexx</title>
+<meta name="keywords" content="compression, algorithms, data structures, huffman coding">
+<meta name="description" content="A beginner-friendly guide to Huffman Coding — how it works, how to encode and decode, and why it remains a cornerstone of data compression.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/huffman_coding/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.93f625d739f1d6a5c6f20c146bc6a8d26b233492b34b2220c54b12fd46a04ded.css" integrity="sha256-k/Yl1znx1qXG8gwUa8ao0msjNJKzSyIgxUsS/UagTe0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/huffman_coding/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="ryynexx (Alt + H)">ryynexx</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Huffman Coding Made Simple: Compressing Without Compromise
+    </h1>
+    <div class="post-description">
+      A beginner-friendly guide to Huffman Coding — how it works, how to encode and decode, and why it remains a cornerstone of data compression.
+    </div>
+    <div class="post-meta"><span title='2025-08-22 00:00:00 +0500 PKT'>August 22, 2025</span>&nbsp;·&nbsp;5 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#why-do-we-need-huffman-coding" aria-label="Why Do We Need Huffman Coding?">Why Do We Need Huffman Coding?</a><ul>
+                        
+                <li>
+                    <a href="#what-well-cover" aria-label="What We’ll Cover">What We’ll Cover</a></li></ul>
+                </li>
+                <li>
+                    <a href="#introduction-to-huffman-coding" aria-label="Introduction to Huffman Coding">Introduction to Huffman Coding</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#example-abracadabra" aria-label="Example: “ABRACADABRA”">Example: “ABRACADABRA”</a></li>
+                <li>
+                    <a href="#fixed-length-ascii-representation" aria-label="Fixed-Length ASCII Representation">Fixed-Length ASCII Representation</a></li>
+                <li>
+                    <a href="#character-frequencies" aria-label="Character Frequencies">Character Frequencies</a></li></ul>
+                    
+                <li>
+                    <a href="#huffman-construction-one-valid-sequence" aria-label="Huffman construction (one valid sequence)">Huffman construction (one valid sequence)</a><ul>
+                        
+                <li>
+                    <a href="#initial-nodes-forest" aria-label="Initial nodes (forest):">Initial nodes (forest):</a></li>
+                <li>
+                    <a href="#step-1-merge-the-two-smallest" aria-label="Step 1: Merge the two smallest">Step 1: Merge the two smallest</a></li>
+                <li>
+                    <a href="#step-2-merge-the-next-two-smallest" aria-label="Step 2: Merge the next two smallest">Step 2: Merge the next two smallest</a></li>
+                <li>
+                    <a href="#step-3-merge-the-two-smallest" aria-label="Step 3: Merge the two smallest">Step 3: Merge the two smallest</a></li>
+                <li>
+                    <a href="#step-4-final-merge-remaining" aria-label="Step 4 (final): Merge remaining">Step 4 (final): Merge remaining</a></li></ul>
+                </li>
+                <li>
+                    <a href="#assigning-codes" aria-label="Assigning Codes">Assigning Codes</a></li>
+                <li>
+                    <a href="#encoding-with-huffman" aria-label="Encoding with Huffman">Encoding with Huffman</a><ul>
+                        
+                <li>
+                    <a href="#compression-results" aria-label="Compression Results">Compression Results</a></li></ul>
+                </li>
+                <li>
+                    <a href="#decoding-huffman-codes" aria-label="Decoding Huffman Codes">Decoding Huffman Codes</a><ul>
+                        
+                <li>
+                    <a href="#1-storing-the-tree" aria-label="1. Storing the Tree">1. Storing the Tree</a></li>
+                <li>
+                    <a href="#2-traversing-the-tree" aria-label="2. Traversing the Tree">2. Traversing the Tree</a></li>
+                <li>
+                    <a href="#3-why-no-separators-are-needed" aria-label="3. Why No Separators Are Needed">3. Why No Separators Are Needed</a></li>
+                <li>
+                    <a href="#4-decoding-abracadabra" aria-label="4. Decoding “ABRACADABRA”">4. Decoding “ABRACADABRA”</a></li></ul>
+                </li>
+                <li>
+                    <a href="#real-world-applications" aria-label="Real-World Applications">Real-World Applications</a></li>
+                <li>
+                    <a href="#advantages-of-huffman-coding" aria-label="Advantages of Huffman Coding">Advantages of Huffman Coding</a></li>
+                <li>
+                    <a href="#limitations" aria-label="Limitations">Limitations</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><hr>
+<p>Have you ever come across the word <strong>“compress”</strong> while dealing with files, videos, or audio?<br>
+The word itself suggests <em>shrinking something down</em>, and that’s exactly what compression does.</p>
+<p>When we’re handling large files, we often wish to reduce their size. But how can we achieve that?<br>
+👉 One answer lies in <strong>Huffman Coding</strong>, a classic algorithm for efficient, lossless compression.</p>
+<hr>
+<h1 id="why-do-we-need-huffman-coding">Why Do We Need Huffman Coding?<a hidden class="anchor" aria-hidden="true" href="#why-do-we-need-huffman-coding">#</a></h1>
+<p>Computers store data in <strong>binary (0s and 1s)</strong>.<br>
+When saving text, each character is usually stored in <strong>8 bits</strong> using <strong>ASCII encoding</strong>.</p>
+<p>This is convenient, but not always efficient:</p>
+<ul>
+<li>Every character takes 8 bits, no matter how common it is.</li>
+<li>Repeated characters waste space since their full 8-bit code repeats every time.</li>
+</ul>
+<p>This makes data <strong>bulky</strong> and <strong>inefficient</strong>.</p>
+<p>👉 Huffman Coding solves this problem by assigning <strong>shorter codes to frequent characters</strong> and <strong>longer codes to rare ones</strong>.</p>
+<hr>
+<h2 id="what-well-cover">What We’ll Cover<a hidden class="anchor" aria-hidden="true" href="#what-well-cover">#</a></h2>
+<ul>
+<li>What is Huffman Coding?</li>
+<li>The idea behind it</li>
+<li>Encoding with Huffman</li>
+<li>Decoding with Huffman</li>
+<li>Advantages and limitations</li>
+</ul>
+<hr>
+<h1 id="introduction-to-huffman-coding">Introduction to Huffman Coding<a hidden class="anchor" aria-hidden="true" href="#introduction-to-huffman-coding">#</a></h1>
+<p><strong>Huffman Coding</strong> is a compression algorithm introduced by <strong>David A. Huffman</strong> in <strong>1952</strong>.</p>
+<p>Its goal is <strong>lossless compression</strong> — reducing file size without losing any information.</p>
+<p>How it works:</p>
+<ul>
+<li>Characters that appear <strong>more often</strong> are assigned <strong>shorter codes</strong>.</li>
+<li>Characters that appear <strong>less often</strong> are assigned <strong>longer codes</strong>.</li>
+</ul>
+<p>The result is a set of <strong>variable-length, prefix-free codes</strong> (no code is the prefix of another), which ensures decoding is always unambiguous.</p>
+<hr>
+<h3 id="example-abracadabra">Example: “ABRACADABRA”<a hidden class="anchor" aria-hidden="true" href="#example-abracadabra">#</a></h3>
+<p>Let’s walk through Huffman Coding with the string:</p>
+<p>&ldquo;ABRACADABRA&rdquo;</p>
+<hr>
+<h3 id="fixed-length-ascii-representation">Fixed-Length ASCII Representation<a hidden class="anchor" aria-hidden="true" href="#fixed-length-ascii-representation">#</a></h3>
+<p>Normally, each character would take 8 bits:</p>
+<p>A → 01000001
+B → 01000010
+R → 01010010
+A → 01000001
+C → 01000011
+A → 01000001
+D → 01000100
+A → 01000001
+B → 01000010
+R → 01010010
+A → 01000001</p>
+<p>That’s <strong>11 characters × 8 bits = 88 bits</strong>.</p>
+<hr>
+<h3 id="character-frequencies">Character Frequencies<a hidden class="anchor" aria-hidden="true" href="#character-frequencies">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Character</th>
+          <th>Frequency</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>A</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>B</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>R</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>C</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>D</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+<p>Total symbols = <strong>11</strong></p>
+<hr>
+<h2 id="huffman-construction-one-valid-sequence">Huffman construction (one valid sequence)<a hidden class="anchor" aria-hidden="true" href="#huffman-construction-one-valid-sequence">#</a></h2>
+<blockquote>
+<p>Note : Ties between equal frequencies can be broken in different ways; this is a common, deterministic order.</p></blockquote>
+<h3 id="initial-nodes-forest">Initial nodes (forest):<a hidden class="anchor" aria-hidden="true" href="#initial-nodes-forest">#</a></h3>
+<p>{A:5}, {B:2}, {R:2}, {C:1}, {D:1}</p>
+<p><img alt="Huffman Tree Step 0" loading="lazy" src="/huffman/huffman_0.png"></p>
+<h3 id="step-1-merge-the-two-smallest">Step 1: Merge the two smallest<a hidden class="anchor" aria-hidden="true" href="#step-1-merge-the-two-smallest">#</a></h3>
+<p>→ {C:1} + {D:1} → {CD:2}
+Forest now: {A:5}, {B:2}, {R:2}, {CD:2}</p>
+<p><img alt="Huffman Tree Step 1" loading="lazy" src="/huffman/huffman_1.png"></p>
+<h3 id="step-2-merge-the-next-two-smallest">Step 2: Merge the next two smallest<a hidden class="anchor" aria-hidden="true" href="#step-2-merge-the-next-two-smallest">#</a></h3>
+<p>(tie at 2) → {B:2} + {R:2} → {BR:4}
+Forest now: {A:5}, {CD:2}, {BR:4}</p>
+<p><img alt="Huffman Tree Step 2" loading="lazy" src="/huffman/huffman_2.png"></p>
+<h3 id="step-3-merge-the-two-smallest">Step 3: Merge the two smallest<a hidden class="anchor" aria-hidden="true" href="#step-3-merge-the-two-smallest">#</a></h3>
+<p>→ {CD:2} + {BR:4} → {CD_BR:6}
+Forest now: {A:5}, {CD_BR:6}</p>
+<p><img alt="Huffman Tree Step 3" loading="lazy" src="/huffman/huffman_3.png"></p>
+<h3 id="step-4-final-merge-remaining">Step 4 (final): Merge remaining<a hidden class="anchor" aria-hidden="true" href="#step-4-final-merge-remaining">#</a></h3>
+<p>→ {A:5} + {CD_BR:6} → {ROOT:11}</p>
+<p>That’s the complete build.</p>
+<p><img alt="Huffman Tree Step 4" loading="lazy" src="/huffman/huffman_4.png"></p>
+<hr>
+<h2 id="assigning-codes">Assigning Codes<a hidden class="anchor" aria-hidden="true" href="#assigning-codes">#</a></h2>
+<p>Frequent characters are closer to the root → shorter codes.</p>
+<p>Example result (your codes may differ depending on merge order):</p>
+<table>
+  <thead>
+      <tr>
+          <th>Character</th>
+          <th>Huffman Code</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>A</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>B</td>
+          <td>110</td>
+      </tr>
+      <tr>
+          <td>R</td>
+          <td>111</td>
+      </tr>
+      <tr>
+          <td>C</td>
+          <td>1000</td>
+      </tr>
+      <tr>
+          <td>D</td>
+          <td>1001</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="encoding-with-huffman">Encoding with Huffman<a hidden class="anchor" aria-hidden="true" href="#encoding-with-huffman">#</a></h2>
+<p>Now we can encode the string <strong>ABRACADABRA</strong>:</p>
+<p>0 110 111 0 1000 0 1001 0 110 111 0</p>
+<p>Concatenated bitstream:</p>
+<p>01101110010000100101110</p>
+<hr>
+<h3 id="compression-results">Compression Results<a hidden class="anchor" aria-hidden="true" href="#compression-results">#</a></h3>
+<ul>
+<li><strong>ASCII fixed-width:</strong> 11 × 8 = 88 bits</li>
+<li><strong>Huffman encoding:</strong> 22 bits</li>
+</ul>
+<p>✅ That’s a <strong>75% reduction</strong> in size!</p>
+<hr>
+<h2 id="decoding-huffman-codes">Decoding Huffman Codes<a hidden class="anchor" aria-hidden="true" href="#decoding-huffman-codes">#</a></h2>
+<p>Compression is only half the process — <strong>decoding</strong> restores the original data.</p>
+<p>But since Huffman uses <strong>variable-length codes</strong>, how does the decoder know where one character ends and the next begins?</p>
+<hr>
+<h3 id="1-storing-the-tree">1. Storing the Tree<a hidden class="anchor" aria-hidden="true" href="#1-storing-the-tree">#</a></h3>
+<p>The compressed file begins with a <strong>header</strong> that contains either:</p>
+<ul>
+<li>The frequency table, or</li>
+<li>A serialized version of the Huffman tree.</li>
+</ul>
+<p>This allows the decoder to reconstruct the same tree.</p>
+<hr>
+<h3 id="2-traversing-the-tree">2. Traversing the Tree<a hidden class="anchor" aria-hidden="true" href="#2-traversing-the-tree">#</a></h3>
+<p>Decoding works by reading the bitstream one bit at a time:</p>
+<ul>
+<li><code>0</code> → go left</li>
+<li><code>1</code> → go right</li>
+<li>When a leaf node is reached → output the character and reset to root</li>
+</ul>
+<hr>
+<h3 id="3-why-no-separators-are-needed">3. Why No Separators Are Needed<a hidden class="anchor" aria-hidden="true" href="#3-why-no-separators-are-needed">#</a></h3>
+<p>Huffman codes are <strong>prefix-free</strong>: no code is the prefix of another.</p>
+<p>For example, if:</p>
+<ul>
+<li><code>A = 0</code></li>
+<li><code>R = 111</code></li>
+</ul>
+<p>then the decoder can always distinguish between <code>0</code> (A) and <code>111</code> (R) without ambiguity.</p>
+<hr>
+<h3 id="4-decoding-abracadabra">4. Decoding “ABRACADABRA”<a hidden class="anchor" aria-hidden="true" href="#4-decoding-abracadabra">#</a></h3>
+<p>Encoded bitstream:</p>
+<p>01101110010000100101110</p>
+<p>Decoding step-by-step:</p>
+<ul>
+<li><code>0</code> → A</li>
+<li><code>110</code> → B</li>
+<li><code>111</code> → R</li>
+<li><code>0</code> → A</li>
+<li><code>1000</code> → C</li>
+<li><code>0</code> → A</li>
+<li><code>1001</code> → D</li>
+<li><code>0</code> → A</li>
+<li><code>110</code> → B</li>
+<li><code>111</code> → R</li>
+<li><code>0</code> → A</li>
+</ul>
+<p>✅ Reconstructed text:</p>
+<p>ABRACADABRA</p>
+<hr>
+<h2 id="real-world-applications">Real-World Applications<a hidden class="anchor" aria-hidden="true" href="#real-world-applications">#</a></h2>
+<p>Huffman Coding is widely used in:</p>
+<ul>
+<li><strong>File compression</strong> → ZIP, GZIP, TAR</li>
+<li><strong>Multimedia formats</strong> → JPEG (images), MP3 (audio)</li>
+<li><strong>Data transmission</strong> → protocols that optimize bandwidth</li>
+</ul>
+<p>Whenever you save space <strong>without losing quality</strong>, Huffman Coding may be working behind the scenes.</p>
+<hr>
+<h2 id="advantages-of-huffman-coding">Advantages of Huffman Coding<a hidden class="anchor" aria-hidden="true" href="#advantages-of-huffman-coding">#</a></h2>
+<p>✔ <strong>Optimal</strong> → Produces the shortest possible prefix codes for given frequencies<br>
+✔ <strong>Lossless</strong> → No data is lost during compression<br>
+✔ <strong>Versatile</strong> → Works well for text, images, and other data</p>
+<hr>
+<h2 id="limitations">Limitations<a hidden class="anchor" aria-hidden="true" href="#limitations">#</a></h2>
+<ul>
+<li>Works best when character frequencies are <strong>uneven</strong></li>
+<li>Requires <strong>frequency analysis</strong> before compression</li>
+<li>Less efficient than advanced methods like <strong>Arithmetic Coding</strong> or <strong>Lempel–Ziv (LZ)</strong></li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Huffman Coding is a brilliant example of how a simple principle —</p>
+<p><strong>“Give frequent symbols shorter codes”</strong> —</p>
+<p>can drastically reduce data size while keeping it intact.</p>
+<p>Even after 70+ years, it remains a <strong>cornerstone of data compression</strong>.</p>
+<p>So the next time you zip a file or stream a video, remember:<br>
+👉 Huffman’s elegant algorithm is probably working in the background, saving you storage, bandwidth, and time.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/compression/">Compression</a></li>
+      <li><a href="http://localhost:1313/tags/algorithms/">Algorithms</a></li>
+      <li><a href="http://localhost:1313/tags/data-structures/">Data Structures</a></li>
+      <li><a href="http://localhost:1313/tags/huffman-coding/">Huffman Coding</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">ryynexx</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

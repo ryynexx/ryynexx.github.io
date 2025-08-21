@@ -1,12 +1,12 @@
 +++
 date = '2025-07-11T17:00:00+05:00'
-title = 'From Command Line to Automation: Your Bash Journey Begins'
-tags = ['bash', 'scripting', 'linux', 'automation', 'productivity']
+title = "Understanding Multithreading in Python: A Beginner's Guide"
+tags = ['python', 'multithreading', 'concurrency', 'parallelism', 'beginner']
 +++
 
 ---
 
-# Understanding Multithreading in Python: A Beginner's Guide
+
 
 Ever wished you could complete all your tasks at once—handle chores, finish assignments, and relax—all simultaneously? While humans might struggle with efficient multitasking, your computer excels at it. Thanks to **multithreading**, it can run multiple instructions concurrently. This is what allows your browser to load multiple tabs at once and enables a game to respond to input while rendering graphics in real time.
 

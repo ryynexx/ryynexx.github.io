@@ -3,10 +3,9 @@
 +++
 title = "Huffman Coding Made Simple: Compressing Without Compromise"
 date = 2025-08-22T00:00:00+05:00
-draft = false
 description = "A beginner-friendly guide to Huffman Coding — how it works, how to encode and decode, and why it remains a cornerstone of data compression."
 tags = ["compression", "algorithms", "data structures", "huffman coding"]
-categories = ["Computer Science", "Data Compression"]
+
 +++
 
 ---
@@ -19,7 +18,7 @@ When we’re handling large files, we often wish to reduce their size. But how c
 
 ---
 
-## Why Do We Need Huffman Coding?  
+# Why Do We Need Huffman Coding?  
 
 Computers store data in **binary (0s and 1s)**.  
 When saving text, each character is usually stored in **8 bits** using **ASCII encoding**.  
@@ -44,7 +43,7 @@ This makes data **bulky** and **inefficient**.
 
 ---
 
-## Introduction to Huffman Coding  
+# Introduction to Huffman Coding  
 
 **Huffman Coding** is a compression algorithm introduced by **David A. Huffman** in **1952**.  
 
@@ -58,7 +57,7 @@ The result is a set of **variable-length, prefix-free codes** (no code is the pr
 
 ---
 
-## Example: “ABRACADABRA”  
+### Example: “ABRACADABRA”  
 
 Let’s walk through Huffman Coding with the string:  
 
@@ -88,7 +87,7 @@ That’s **11 characters × 8 bits = 88 bits**.
 
 ---
 
-### Step 1: Character Frequencies  
+###  Character Frequencies  
 
 | Character | Frequency |
 |-----------|-----------|
@@ -102,23 +101,49 @@ Total symbols = **11**
 
 ---
 
-### Step 2: Building the Huffman Tree  
+## Huffman construction (one valid sequence)
 
-Start with each character as its own node:  
+> Note : Ties between equal frequencies can be broken in different ways; this is a common, deterministic order.
 
+### Initial nodes (forest):
 {A:5}, {B:2}, {R:2}, {C:1}, {D:1}
 
+![Huffman Tree Step 0](/huffman/huffman_0.png)  
 
-Then iteratively merge the two smallest:  
+### Step 1: Merge the two smallest 
 
-1. `{C:1} + {D:1} → {CD:2}`  
-2. `{B:2} + {R:2} → {BR:4}`  
-3. `{CD:2} + {BR:4} → {CD_BR:6}`  
-4. `{A:5} + {CD_BR:6} → {ROOT:11}`  
+→ {C:1} + {D:1} → {CD:2}
+Forest now: {A:5}, {B:2}, {R:2}, {CD:2}
+
+![Huffman Tree Step 1](/huffman/huffman_1.png)  
+
+### Step 2: Merge the next two smallest 
+
+(tie at 2) → {B:2} + {R:2} → {BR:4}
+Forest now: {A:5}, {CD:2}, {BR:4}
+
+![Huffman Tree Step 2](/huffman/huffman_2.png)  
+
+### Step 3: Merge the two smallest 
+
+→ {CD:2} + {BR:4} → {CD_BR:6}
+Forest now: {A:5}, {CD_BR:6}
+
+![Huffman Tree Step 3](/huffman/huffman_3.png)  
+
+
+### Step 4 (final): Merge remaining 
+
+→ {A:5} + {CD_BR:6} → {ROOT:11}
+
+That’s the complete build.
+
+![Huffman Tree Step 4](/huffman/huffman_4.png)  
+
 
 ---
 
-### Step 3: Assigning Codes  
+##  Assigning Codes  
 
 Frequent characters are closer to the root → shorter codes.  
 
@@ -134,16 +159,6 @@ Example result (your codes may differ depending on merge order):
 
 ---
 
-### Step 4: Visualizing the Tree  
-
-![Huffman Tree Step 0](/huffman/huffman_0.png)  
-![Huffman Tree Step 1](/huffman/huffman_1.png)  
-![Huffman Tree Step 2](/huffman/huffman_2.png)  
-![Huffman Tree Step 3](/huffman/huffman_3.png)  
-![Huffman Tree Step 4](/huffman/huffman_4.png)  
-![Final Huffman Tree](/huffman/huffman_last.png)  
-
----
 
 ## Encoding with Huffman  
 

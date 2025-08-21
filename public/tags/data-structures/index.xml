@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Data Structures on ryynexx</title>
+    <link>http://localhost:1313/tags/data-structures/</link>
+    <description>Recent content in Data Structures on ryynexx</description>
+    <generator>Hugo -- 0.148.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Aug 2025 00:00:00 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-structures/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Huffman Coding Made Simple: Compressing Without Compromise</title>
+      <link>http://localhost:1313/posts/huffman_coding/</link>
+      <pubDate>Fri, 22 Aug 2025 00:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/posts/huffman_coding/</guid>
+      <description>A beginner-friendly guide to Huffman Coding — how it works, how to encode and decode, and why it remains a cornerstone of data compression.</description>
+    </item>
+  </channel>
+</rss>
