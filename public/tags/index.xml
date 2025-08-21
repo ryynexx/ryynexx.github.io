@@ -37,37 +37,72 @@
       <description></description>
     </item>
     <item>
+      <title>Beginner</title>
+      <link>http://localhost:1313/tags/beginner/</link>
+      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/tags/beginner/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Concurrency</title>
+      <link>http://localhost:1313/tags/concurrency/</link>
+      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multithreading</title>
+      <link>http://localhost:1313/tags/multithreading/</link>
+      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/tags/multithreading/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Parallelism</title>
+      <link>http://localhost:1313/tags/parallelism/</link>
+      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/tags/parallelism/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Automation</title>
       <link>http://localhost:1313/tags/automation/</link>
-      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <pubDate>Sat, 28 Jun 2025 17:00:00 +0500</pubDate>
       <guid>http://localhost:1313/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
       <link>http://localhost:1313/tags/bash/</link>
-      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <pubDate>Sat, 28 Jun 2025 17:00:00 +0500</pubDate>
       <guid>http://localhost:1313/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
       <link>http://localhost:1313/tags/linux/</link>
-      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <pubDate>Sat, 28 Jun 2025 17:00:00 +0500</pubDate>
       <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Productivity</title>
       <link>http://localhost:1313/tags/productivity/</link>
-      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <pubDate>Sat, 28 Jun 2025 17:00:00 +0500</pubDate>
       <guid>http://localhost:1313/tags/productivity/</guid>
       <description></description>
     </item>
     <item>
       <title>Scripting</title>
       <link>http://localhost:1313/tags/scripting/</link>
-      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
+      <pubDate>Sat, 28 Jun 2025 17:00:00 +0500</pubDate>
       <guid>http://localhost:1313/tags/scripting/</guid>
       <description></description>
     </item>
@@ -118,13 +153,6 @@
       <link>http://localhost:1313/tags/pandas/</link>
       <pubDate>Thu, 12 Jun 2025 17:00:00 +0500</pubDate>
       <guid>http://localhost:1313/tags/pandas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
-      <pubDate>Thu, 12 Jun 2025 17:00:00 +0500</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>

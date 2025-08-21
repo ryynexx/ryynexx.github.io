@@ -6,17 +6,8 @@
     <description>Recent content in Linux on ryynexx</description>
     <generator>Hugo -- 0.148.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jul 2025 17:00:00 +0500</lastBuildDate>
+    <lastBuildDate>Sat, 28 Jun 2025 17:00:00 +0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>From Command Line to Automation: Your Bash Journey Begins</title>
-      <link>http://localhost:1313/posts/multithreading/</link>
-      <pubDate>Fri, 11 Jul 2025 17:00:00 +0500</pubDate>
-      <guid>http://localhost:1313/posts/multithreading/</guid>
-      <description>&lt;hr&gt;
-&lt;h1 id=&#34;understanding-multithreading-in-python-a-beginners-guide&#34;&gt;Understanding Multithreading in Python: A Beginner&amp;rsquo;s Guide&lt;/h1&gt;
-&lt;p&gt;Ever wished you could complete all your tasks at once—handle chores, finish assignments, and relax—all simultaneously? While humans might struggle with efficient multitasking, your computer excels at it. Thanks to &lt;strong&gt;multithreading&lt;/strong&gt;, it can run multiple instructions concurrently. This is what allows your browser to load multiple tabs at once and enables a game to respond to input while rendering graphics in real time.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>From Command Line to Automation: Your Bash Journey Begins</title>
       <link>http://localhost:1313/posts/bash_scripting/</link>
