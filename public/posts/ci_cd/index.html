@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>CI/CD for Beginners: What It Is and Why It Matters | ryynexx</title>
+<meta name="keywords" content="ci/cd, devops, automation, software engineering">
+<meta name="description" content="Introduction
+Ever wonder how software updates roll out so frequently and efficiently?
+Making changes to a large codebase, ensuring it’s error-free, and deploying it to users sounds slow and tedious. Yet modern apps update daily, sometimes multiple times a day.
+The answer lies in CI/CD — Continuous Integration and Continuous Delivery/Deployment.
+In today’s fast-paced software world, writing good code is only half the story. Getting that code safely, quickly, and reliably into production is just as important. CI/CD helps developers do exactly that.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/ci_cd/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.93f625d739f1d6a5c6f20c146bc6a8d26b233492b34b2220c54b12fd46a04ded.css" integrity="sha256-k/Yl1znx1qXG8gwUa8ao0msjNJKzSyIgxUsS/UagTe0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/ci_cd/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="ryynexx (Alt + H)">ryynexx</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      CI/CD for Beginners: What It Is and Why It Matters
+    </h1>
+    <div class="post-meta"><span title='2025-08-27 00:00:00 +0500 PKT'>August 27, 2025</span>&nbsp;·&nbsp;5 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#introduction" aria-label="Introduction">Introduction</a></li>
+                <li>
+                    <a href="#-what-is-cicd" aria-label="🔹 What is CI/CD?">🔹 What is CI/CD?</a><ul>
+                        
+                <li>
+                    <a href="#-continuous-integration-ci" aria-label="🔹 Continuous Integration (CI)">🔹 Continuous Integration (CI)</a></li>
+                <li>
+                    <a href="#-continuous-delivery-cd" aria-label="🔹 Continuous Delivery (CD)">🔹 Continuous Delivery (CD)</a></li>
+                <li>
+                    <a href="#-continuous-deployment-cd" aria-label="🔹 Continuous Deployment (CD)">🔹 Continuous Deployment (CD)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#-why-does-cicd-matter" aria-label="🔹 Why Does CI/CD Matter?">🔹 Why Does CI/CD Matter?</a></li>
+                <li>
+                    <a href="#-the-cicd-pipeline" aria-label="🔹 The CI/CD Pipeline">🔹 The CI/CD Pipeline</a><ul>
+                        
+                <li>
+                    <a href="#what-is-a-pipeline" aria-label="What is a pipeline?">What is a pipeline?</a></li>
+                <li>
+                    <a href="#typical-stages" aria-label="Typical Stages">Typical Stages</a></li></ul>
+                </li>
+                <li>
+                    <a href="#-real-world-example" aria-label="🔹 Real-World Example">🔹 Real-World Example</a></li>
+                <li>
+                    <a href="#-popular-cicd-tools" aria-label="🔹 Popular CI/CD Tools">🔹 Popular CI/CD Tools</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<p>Ever wonder how software updates roll out so frequently and efficiently?</p>
+<p>Making changes to a large codebase, ensuring it’s error-free, and deploying it to users sounds slow and tedious. Yet modern apps update daily, sometimes multiple times a day.</p>
+<p>The answer lies in <strong>CI/CD — Continuous Integration and Continuous Delivery/Deployment</strong>.</p>
+<p>In today’s fast-paced software world, writing good code is only half the story. Getting that code safely, quickly, and reliably into production is just as important. CI/CD helps developers do exactly that.</p>
+<hr>
+<h2 id="-what-is-cicd">🔹 What is CI/CD?<a hidden class="anchor" aria-hidden="true" href="#-what-is-cicd">#</a></h2>
+<p>At its core, <strong>CI/CD is automation for software delivery</strong>. It’s a set of practices that:</p>
+<ul>
+<li>Integrate code changes frequently</li>
+<li>Run automated tests</li>
+<li>Deliver updates quickly and reliably</li>
+</ul>
+<p>Since multiple teams often work on the same project, manual coordination is risky — changes can conflict, bugs may slip through, and deployments can break. CI/CD solves this by:</p>
+<ul>
+<li>
+<p>Managing changes with <strong>version control</strong></p>
+</li>
+<li>
+<p>Running automated builds and tests</p>
+</li>
+<li>
+<p>Preparing code for release</p>
+</li>
+<li>
+<p>Deploying safely to production</p>
+<h3 id="-continuous-integration-ci">🔹 Continuous Integration (CI)<a hidden class="anchor" aria-hidden="true" href="#-continuous-integration-ci">#</a></h3>
+</li>
+</ul>
+<p>Continuous Integration is the practice of <strong>frequently merging small code changes</strong> into a shared repository (like GitHub or GitLab). Each time code is committed, an <strong>automated build and test process</strong> runs.</p>
+<p>Why this matters:</p>
+<ul>
+<li>Catch bugs <strong>early</strong> before they pile up</li>
+<li>Prevent integration issues between teams working on the same project</li>
+<li>Ensure the application always compiles and works as expected</li>
+</ul>
+<p>In short, CI answers the question:</p>
+<blockquote>
+<p><em>“Does the new code play nicely with everything else?”</em></p></blockquote>
+<hr>
+<h3 id="-continuous-delivery-cd">🔹 Continuous Delivery (CD)<a hidden class="anchor" aria-hidden="true" href="#-continuous-delivery-cd">#</a></h3>
+<p>Continuous Delivery ensures that after passing CI, your software is always in a <strong>deployable state</strong>.</p>
+<p>Here’s how it works:</p>
+<ul>
+<li>Code that passes tests is automatically packaged into a release-ready format</li>
+<li>It’s deployed to a <strong>staging environment</strong> where further checks can be made</li>
+<li>The actual push to production is still <strong>manual</strong>, but it’s always just one click away</li>
+</ul>
+<p>This means your software is <strong>always ready to deploy</strong> — no big release-day surprises.</p>
+<p>CD answers the question:</p>
+<blockquote>
+<p><em>“Can I release this version of the software right now if I want to?”</em></p></blockquote>
+<hr>
+<h3 id="-continuous-deployment-cd">🔹 Continuous Deployment (CD)<a hidden class="anchor" aria-hidden="true" href="#-continuous-deployment-cd">#</a></h3>
+<p>Continuous Deployment takes things a step further. Instead of waiting for someone to click “Deploy,” the system <strong>automatically pushes every passing change</strong> straight to production.</p>
+<ul>
+<li>No human intervention is required</li>
+<li>Every commit that passes CI/CD checks goes live</li>
+<li>Users get new features and bug fixes almost instantly</li>
+</ul>
+<p>This approach demands <strong>strong automated testing and monitoring</strong> — but when done right, it enables truly rapid, seamless software delivery.</p>
+<p>Continuous Deployment answers the question:</p>
+<blockquote>
+<p><em>“Why wait? If it’s ready, why not ship it automatically?”</em></p></blockquote>
+<hr>
+<blockquote>
+<p><strong>Factory analogy:</strong><br>
+Think of the software process like an assembly line:</p></blockquote>
+<ul>
+<li>CI = making sure each part fits correctly</li>
+<li>CD (Delivery) = assembling the product and keeping it ready on the shelf</li>
+<li>CD (Deployment) = shipping it directly to the customer’s doorstep</li>
+</ul>
+<hr>
+<h2 id="-why-does-cicd-matter">🔹 Why Does CI/CD Matter?<a hidden class="anchor" aria-hidden="true" href="#-why-does-cicd-matter">#</a></h2>
+<p>Before CI/CD, teams bundled updates into big releases, often leading to:</p>
+<ul>
+<li>Long delays between updates</li>
+<li>Stressful “release days”</li>
+<li>Hard-to-trace failures</li>
+</ul>
+<p>With CI/CD, you get:</p>
+<ul>
+<li><strong>Faster feedback</strong> – Bugs are caught within minutes of writing code.</li>
+<li><strong>Less risk</strong> – Small, frequent updates are easier to debug and roll back.</li>
+<li><strong>Happier teams</strong> – No more deployment-day panic.</li>
+<li><strong>Satisfied users</strong> – Features and fixes reach customers quickly.</li>
+<li><strong>Consistency</strong> – Pipelines ensure the same process runs for dev, staging, and production.</li>
+<li><strong>Version Control Integration</strong> – Every commit or pull request triggers the pipeline. You know <em>who</em> changed <em>what</em>, rollbacks are easy, and collaboration is smoother.</li>
+<li><strong>Scalability</strong> – As projects grow, automation handles complexity.</li>
+<li><strong>Built-in security</strong> – Automated scans catch vulnerabilities before release.</li>
+<li><strong>Competitive advantage</strong> – Faster delivery means quicker response to feedback and market changes.</li>
+</ul>
+<hr>
+<h2 id="-the-cicd-pipeline">🔹 The CI/CD Pipeline<a hidden class="anchor" aria-hidden="true" href="#-the-cicd-pipeline">#</a></h2>
+<h3 id="what-is-a-pipeline">What is a pipeline?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-pipeline">#</a></h3>
+<p>A <strong>pipeline</strong> is an automated workflow that moves code from development to production. Once code is committed, it flows through a sequence of checks until it’s ready for users.</p>
+<p>Think of it like a <strong>conveyor belt for software delivery</strong>.</p>
+<h3 id="typical-stages">Typical Stages<a hidden class="anchor" aria-hidden="true" href="#typical-stages">#</a></h3>
+<ol>
+<li><strong>Code Commit</strong> – Push code to version control (GitHub, GitLab, etc.).</li>
+<li><strong>Build</strong> – Compile code, install dependencies, package artifacts.</li>
+<li><strong>Automated Tests</strong> – Run unit, integration, and security tests.</li>
+<li><strong>Staging Deployment</strong> – Deploy to a test environment for QA and verification.</li>
+<li><strong>Production Deployment</strong> –
+<ul>
+<li>With <strong>Continuous Delivery</strong>, triggered manually.</li>
+<li>With <strong>Continuous Deployment</strong>, fully automated.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="-real-world-example">🔹 Real-World Example<a hidden class="anchor" aria-hidden="true" href="#-real-world-example">#</a></h2>
+<p>Imagine building an e-commerce site.</p>
+<p>Without CI/CD:</p>
+<ul>
+<li>You’d develop for weeks, bundle changes, and nervously push them live in one big risky release.</li>
+</ul>
+<p>With CI/CD:</p>
+<ul>
+<li>Each feature is tested automatically.</li>
+<li>A staging environment previews changes.</li>
+<li>Updates deploy with one click — or no click at all.</li>
+</ul>
+<blockquote>
+<p>Result: <strong>fewer crashes, faster fixes, happier customers.</strong></p></blockquote>
+<hr>
+<h2 id="-popular-cicd-tools">🔹 Popular CI/CD Tools<a hidden class="anchor" aria-hidden="true" href="#-popular-cicd-tools">#</a></h2>
+<p>Some widely used platforms include:</p>
+<ul>
+<li><strong>Jenkins</strong> – Open-source, highly customizable</li>
+<li><strong>GitHub Actions</strong> – Built directly into GitHub</li>
+<li><strong>GitLab CI/CD</strong> – Integrated with GitLab repositories</li>
+<li><strong>CircleCI</strong> – Cloud-based, easy setup</li>
+<li><strong>Azure DevOps / AWS CodePipeline</strong> – Enterprise cloud-native solutions</li>
+</ul>
+<p>Each tool automates the <strong>build → test → deploy</strong> cycle, following the same principles.</p>
+<hr>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>CI/CD isn’t just a buzzword — it’s a <strong>mindset shift</strong>. By embracing automation, teams can focus on innovation instead of firefighting.</p>
+<p>Whether you’re working on a side project or a large enterprise system, CI/CD helps you deliver software that’s <strong>reliable, scalable, and fast</strong>.</p>
+<blockquote>
+<p>“The sooner you integrate, the sooner you can deliver. And the sooner you deliver, the sooner you can improve.”</p></blockquote>
+<p>✨ <strong>Takeaway:</strong> CI/CD makes software delivery boring — in the <em>best</em> possible way. No drama. No delays. Just smooth, reliable deployments.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/ci/cd/">Ci/Cd</a></li>
+      <li><a href="http://localhost:1313/tags/devops/">Devops</a></li>
+      <li><a href="http://localhost:1313/tags/automation/">Automation</a></li>
+      <li><a href="http://localhost:1313/tags/software-engineering/">Software Engineering</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">ryynexx</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

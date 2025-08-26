@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ci/Cd on ryynexx</title>
+    <link>http://localhost:1313/tags/ci/cd/</link>
+    <description>Recent content in Ci/Cd on ryynexx</description>
+    <generator>Hugo -- 0.148.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CI/CD for Beginners: What It Is and Why It Matters</title>
+      <link>http://localhost:1313/posts/ci_cd/</link>
+      <pubDate>Wed, 27 Aug 2025 00:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/posts/ci_cd/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Ever wonder how software updates roll out so frequently and efficiently?&lt;/p&gt;
+&lt;p&gt;Making changes to a large codebase, ensuring it’s error-free, and deploying it to users sounds slow and tedious. Yet modern apps update daily, sometimes multiple times a day.&lt;/p&gt;
+&lt;p&gt;The answer lies in &lt;strong&gt;CI/CD — Continuous Integration and Continuous Delivery/Deployment&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In today’s fast-paced software world, writing good code is only half the story. Getting that code safely, quickly, and reliably into production is just as important. CI/CD helps developers do exactly that.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
